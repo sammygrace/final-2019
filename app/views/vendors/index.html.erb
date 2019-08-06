@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @school.name %> Vendors</h1>
-<h3>Results: <%= @vendors.count %></h3>
+<h1><%= @school.name if @school %> Vendors</h1>
 <p><%= link_to 'Back to Schools', schools_path %></p>
 
 <%= render "search_box" %>
+<h3><%== pagy_info @pagy %></h3>
+<%== pagy_nav @pagy %>
 
 <table>
   <thead>
