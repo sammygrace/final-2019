@@ -1,7 +1,6 @@
 class VendorsController < ApplicationController
   include Pagy::Backend
-  before_action :set_vendor, only: [:show, :edit, :update, :destroy, :claim]
-  before_action :set_school, only: [:index]
+  load_and_authorize_resource
 
   def index
     @vendors = Vendor.all
