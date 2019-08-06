@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+#icons!!
+gem 'font-awesome-rails'
+
 #mailer
 gem 'letter_opener_web'
 

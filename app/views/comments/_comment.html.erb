@@ -1,4 +1,10 @@
 <tr>
-  <td><%= comment.like %></td>
+  <td>
+    <% if comment.like %>
+      <i class="fa fa-heart"></i>
+    <% else %>
+      <i class="fa fa-heart-broken"></i>
+    <% end %>
+  </td>
   <td><%= comment.content %></td>
 </tr>
