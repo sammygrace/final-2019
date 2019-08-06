@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Vendors</h1>
+<h3>Results: <%= @vendors.count %></h3>
+
+<%= render "search_box" %>
 
 <table>
   <thead>
@@ -15,9 +18,9 @@
   <tbody>
     <% @vendors.each do |vendor| %>
       <tr>
-        <td><%= link_to vendor.name, vendor %></td>
+        <td><%= highlight (link_to vendor.name, vendor), params[:keywords] %></td>
         <td><%= vendor.address %></td>
-        <td><%= vendor.description %></td>
+        <td><%= highlight vendor.description, params[:keywords] %></td>
         <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
         <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
