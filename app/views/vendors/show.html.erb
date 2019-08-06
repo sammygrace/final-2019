@@ -33,6 +33,7 @@
   <%= @vendor.content %>
 </p>
 
+<hr>
 <h3>Leave a Comment:</h3>
 <table>
   <thead>
@@ -47,11 +48,15 @@
     <%= render @vendor.comments %>
   </tbody>
 </table>
+<br>
 
 <%= render "comments/form", comment: @vendor.comments.new %>
+<br>
 
+<hr>
 <%= link_to 'Back to Vendors', school_vendors_path(@vendor.school) %> |
+<%= link_to 'Home', schools_path %> |
 <%= link_to 'Edit Vendor', edit_vendor_path(@vendor) %> |
 <%= link_to 'Claim This Vendor', claim_vendor_path(@vendor) %> |
-<%= link_to 'Back to Schools', schools_path %> |
+<%= link_to 'See Inbox', letter_opener_web_path %> |
 <%= link_to 'See All Vendors', vendors_path %>

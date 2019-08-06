@@ -1,9 +1,9 @@
 <h1><%= @school.name if @school %> Vendors</h1>
-<p><%= link_to 'Back to Schools', schools_path %></p>
 
 <%= render "search_box" %>
 <h3><%== pagy_info @pagy %></h3>
 <%== pagy_nav @pagy %>
+<br>
 
 <table>
   <thead>
@@ -22,3 +22,5 @@
 
 <br>
 
+<%= link_to 'Home', schools_path %> |
+<%= link_to 'See All Vendors', vendors_path %>
