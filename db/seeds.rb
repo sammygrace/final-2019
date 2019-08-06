@@ -18,3 +18,14 @@
     content: Faker::Lorem.paragraph(20),
   })
 end
+
+10.times do 
+  School.create({
+    name: Faker::Company.name,
+  })
+end
+
+Vendor.all.each do |vendor|
+  vendor.school = School.all.sample
+  vendor.save
+end

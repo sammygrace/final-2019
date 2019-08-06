@@ -1,0 +1,7 @@
+<tr>
+  <td><%= highlight (link_to vendor.name, vendor), params[:keywords] %></td>
+  <td><%= vendor.address %></td>
+  <td><%= highlight vendor.description, params[:keywords] %></td>
+  <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+  <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

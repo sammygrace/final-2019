@@ -1,10 +1,13 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_school, only: [:index]
 
   # GET /vendors
   # GET /vendors.json
   def index
     @vendors = Vendor.all
+    @school = School.find_by(id: params[:school_id]) if params[:school_id]
+    @vendors = @school.try(:vendors) || Vendor
     @vendors = @vendors.search(params[:keywords]) if params[:keywords].present?
   end
 
@@ -66,6 +69,10 @@ class VendorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_vendor
       @vendor = Vendor.find(params[:id])
+    end
+
+    def set_school
+      @school = School.find(params[:school_id]) if params[:school_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

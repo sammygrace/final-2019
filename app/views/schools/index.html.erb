@@ -1,0 +1,10 @@
+<h1>Schools (<%= @schools.count %>)</h1>
+<table>
+  <tbody>
+      <% @schools.each do |school| %>
+        <tr>
+          <td><%= link_to school.name, school %> (<%= school.vendors.count %>)</td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
