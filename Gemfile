@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+#mailer
+gem 'letter_opener_web'
+
 #authorization
 gem 'cancancan'
 

@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
+      CommentsMailer.notify_vendor(@comment.vendor).deliver_now
       redirect_to @comment.vendor, notice: 'Comment was successfully created.'
     else
       render :new

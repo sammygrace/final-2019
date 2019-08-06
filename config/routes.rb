@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get :claim, on: :member
   end
 
+  mount LetterOpenerWeb::Engine, at: "/mailbox"
+
   resources :comments
   resources :schools
   resources :vendors
