@@ -8,6 +8,7 @@ class VendorsController < ApplicationController
     @school = School.find_by(id: params[:school_id]) if params[:school_id]
     @vendors = @school.try(:vendors) || Vendor
     @vendors = @vendors.search(params[:keywords]) if params[:keywords].present?
+    @vendors = @vendors.geosearch(params[:location]) if params[:location].present?
     @pagy, @vendors = pagy(@vendors, items: 5)
   end
 

@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'yaml_db'
+
+#data storage
+gem 'redis'
+
+#location search
+gem 'geocoder'
+
 #pagination
 gem 'pagy'
 
