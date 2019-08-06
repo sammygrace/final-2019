@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   include Pagy::Backend
-  before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_vendor, only: [:show, :edit, :update, :destroy, :claim]
   before_action :set_school, only: [:index]
 
   def index
@@ -39,6 +39,14 @@ class VendorsController < ApplicationController
   def destroy
     @vendor.destroy
     redirect_to vendors_url, notice: 'Vendor was successfully destroyed.'
+  end
+
+  def claim
+    if @vendor.update(user: current_user)
+      redirect_to @vendor, notice: "Vendor successfully claimed."
+    else
+      render :show
+    end
   end
 
   private

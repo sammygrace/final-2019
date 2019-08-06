@@ -1,6 +1,7 @@
 class Vendor < ApplicationRecord
   belongs_to :school, optional: true
   has_many :comments
+  belongs_to :user, optional: true
   
   geocoded_by :address
   after_validation :geocode
