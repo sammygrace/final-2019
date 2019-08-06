@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   root to: 'schools#index'
 
   resources :schools do
