@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Final2019</title>
+    <title>Final2019-development</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,10 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
 		<script src="https://kit.fontawesome.com/0d41050561.js"></script>
+		<link rel="stylesheet" href="https://use.typekit.net/vgr7stm.css">
   </head>
 
   <body>
-    <%= render "login" %>
+    <section class="login">
+      <%= render "login" %>
+    </section>
     <hr>
     <%= render "messages" %>
     <%= yield %>
